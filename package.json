@@ -1,0 +1,9 @@
+{
+  "name": "gamar-pc",
+  "version": "1.1.0",
+  "private": true,
+  "description": "GamAR-PC: Simulasi Perakitan PC 3D untuk SMK TKJ",
+  "scripts": {
+    "test": "node --test tests/"
+  }
+}

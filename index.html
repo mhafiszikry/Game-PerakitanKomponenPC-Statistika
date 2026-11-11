@@ -1,0 +1,29 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"><title>GamAR-PC: Simulasi Perakitan PC 3D</title>
+<link rel="stylesheet" href="style.css"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#0b1220"></head><body>
+<canvas id="c"></canvas><div id="tip"></div>
+<div id="hud" hidden><b id="hl"></b><span id="hh"></span><span id="ht">0s</span><span id="hc"></span><button id="rb" aria-label="Putar komponen 90 derajat">⟳ Putar</button><button id="hn">💡 Hint</button><button id="ps">⏸ Jeda</button><button id="rst">↺ Ulangi</button><button id="qt">✕ Peta</button></div>
+<div id="hi" hidden></div>
+<button id="mt" style="position:fixed;right:10px;bottom:calc(env(safe-area-inset-bottom,0px) + 96px);z-index:20">🔊</button><div id="steps" hidden></div><div id="msg"></div><button id="pwr" hidden>⏻ POWER ON</button>
+<div class="s" id="s0"><div class="card"><h1>🖥️ GamAR-PC</h1><p>Simulasi Perakitan PC 3D realistis untuk SMK TKJ</p><p style="font-size:12px;opacity:.8">Mode Sulit: 5 kesempatan · toleransi presisi · urutan langkah wajib</p>
+<input id="nm" placeholder="Nama Siswa"><input id="cl" placeholder="Kelas / Kelompok (mis. X TKJ 1)">
+<select id="df" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;background:var(--bg);color:var(--t);font-size:15px"><option value="sulit">Mode Sulit (5 nyawa, urutan wajib, presisi ketat)</option><option value="normal">Mode Normal (5 nyawa, urutan wajib, presisi sedang)</option><option value="mudah">Mode Mudah (10 nyawa, urutan bebas, presisi longgar)</option></select>
+<label style="display:flex;gap:8px;align-items:center;font-size:13px;margin:4px 0"><input type="checkbox" id="pr" style="width:auto"> ♾️ Mode Latihan Bebas (tanpa nyawa/timer, semua level terbuka)</label>
+<button id="st" disabled>Mulai Game</button><button id="hw" type="button">❓ Cara Bermain</button></div></div>
+<div class="s" id="tut" hidden><div class="card"><h2>❓ Cara Bermain</h2><p style="text-align:left;font-size:14px;line-height:1.6">1. Drag komponen dari <b>Baki Komponen</b> ke zona garis biru.<br>2. Putar komponen yang butuh orientasi: tekan tombol <b>⟳ Putar</b> di kanan bawah (di HP, tekan dengan jari lain sambil menahan komponen), atau tekan <b>R</b> di PC.<br>3. Kerjakan sesuai urutan bertanda <b>▶</b> di panel kiri.<br>4. Salah urutan/zona/orientasi = nyawa berkurang. Nyawa tersisa 5.<br>5. Selesaikan semua level, lalu tekan <b>⏻ POWER ON</b> untuk POST test.<br>💡 Hint menyorot zona aktif tapi mengurangi skor -2.</p><button id="tutOk">Mengerti</button></div></div>
+<div class="s" id="pz" hidden><div class="card"><h2>⏸ Jeda</h2><p>Timer berhenti. Klik Lanjut untuk bermain lagi.</p><button id="pzOk">▶ Lanjut</button></div></div>
+<div class="s" id="s1" hidden><h2>Peta Level</h2></div>
+<div class="s" id="s2" hidden><div class="card" id="rc"></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>if(typeof THREE==='undefined'){document.addEventListener('DOMContentLoaded',function(){document.body.innerHTML='<div class="s"><div class="card"><h2>⚠️ Gagal memuat Three.js</h2><p>Periksa koneksi internet Anda lalu refresh halaman ini. Game butuh internet untuk memuat Three.js dari CDN.</p></div></div>'})}</script>
+<script src="js/config.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/models.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/decor.js"></script>
+<script src="js/camera.js"></script>
+<script src="js/game.js"></script>
+<script src="js/map.js"></script>
+<script src="js/finale.js"></script>
+<script src="js/input.js"></script>
+<script src="js/main.js"></script></body></html>
